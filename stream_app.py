@@ -20,7 +20,7 @@ def object_to_int(dataframe_series, label_encoders=None):
     
     return dataframe_series, label_encoders
 # with open(model_file, 'rb') as f_in:
-lr_model = joblib.load('logistic_model.pkl')
+lr_model = joblib.load('best_lr_model.pkl')
 label_encoders = joblib.load('label_encoders.pkl')
 scaler = joblib.load('scaler.pkl')
 num_cols = ["tenure", 'MonthlyCharges', 'TotalCharges']
@@ -32,7 +32,7 @@ def main():
     # st.image(image,use_column_width=False)
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
-    ("Online", "Batch"))
+    ("Online"))
     st.sidebar.info('This app is created to predict Customer Churn')
     # st.sidebar.image(image2)
     st.title("Predicting Customer Churn")
